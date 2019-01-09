@@ -1,0 +1,115 @@
+%\documentclass[10pt,a4j]{jsarticle}%[twocolumn,10pt,a4j]{jsarticle}
+%-------Package--------------
+%you can add package
+\usepackage{float}
+\usepackage{amsmath,amssymb, bm}%equation
+%\usepackage{wrapfig}
+\usepackage[dvipdfmx]{graphicx}%pdf%[draft]{graphicx}%
+\usepackage{multicol}
+\usepackage{url}
+
+\renewcommand{\contentsname}{目次}%contents name
+\renewcommand{\abstractname}{概要}%abstract name
+\renewcommand{\appendixname}{付録}%appendix name
+\renewcommand{\refname}{参考文献}%Reference name
+%-------margin-------------
+\usepackage[top=25truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
+
+%%%   section setup   %%%
+\makeatletter
+
+\def\section{\@startsection {section}{1}{\z@}
+{\ifnum \c@section = 0
+0.0ex plus
+\else
+-2.0ex plus 
+\fi
+ -1ex minus -.2ex}
+{0.3ex plus .2ex}{\reset@font\fontsize{14pt}{0pt}\gtfamily\sffamily}}%{\normalsize\bf}}%section bf and section margin if you need more margin after section number you change ex parameter
+%\def\section{\@startsection {section}{1}{\z@}{-2.0ex plus -1ex minus -.2ex}{0.3ex plus .2ex}{\reset@font\gtfamily\sffamily}}%{\normalsize\bf}}%section bf and section margin if you need more margin after section number you change ex parameter
+
+%%%   PAGE STYLE   %%%
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%　*** ヘッダーのデザイン、やりかけ、名案求む ***　%
+%\rhead[\leftmark]{odd}
+\rhead{}
+\lhead[even]{\leftmark}
+\cfoot{\thepage}
+%\fancyfoot{}
+%\fancyfoot[LE,RO]{\thepage}
+%\fancyfoot[LO,RE]{\hspace{1cm}}%\thepage}
+%\fancyhead[LE,RO]{\leftmark}
+
+%\renewcommand{\headrulewidth}{0.4pt}
+%\renewcommand{\footrulewidth}{0.4pt}
+
+%%%   TITLE PAGE   %%%
+\def\@cite#1#2{\hbox{\normalsize{%%%\scriptsize{%参考文献の参照
+\if@tempswa(#2)
+\else(#1)
+\fi}}}
+
+\def\@biblabel#1{\hbox{$\cdot$}}%参考文献リストの形式
+
+
+\renewcommand{\figurename}{Fig. }%fig name
+\renewcommand{\tablename}{Tab. }%table name
+
+\renewcommand{\thefigure}{\thesection.\arabic{figure}}
+\@addtoreset{figure}{section}%図のタイトル
+
+\renewcommand{\thetable}{\thesection.\arabic{table}}
+\@addtoreset{table}{section}%表のタイトル
+
+\renewcommand{\theequation}{\thesection.\arabic{equation}}
+\@addtoreset{equation}{section}%数式のタイトル
+
+\def\figref#1{\hbox{Fig. \ref{#1}}}%図の参照
+\def\tabref#1{\hbox{Tab. \ref{#1}}}%表の参照
+\def\eqref#1{\hbox{Eq. \ref{#1}}}%式の参照
+
+
+\def\thesis#1{\def\@thesis{#1}}
+\def\id#1{\def\@id{#1}}
+\def\department#1{\def\@department{#1}}
+\def\sensei#1{\def\@sensei{#1}}
+ \def\@maketitle{%
+ \begin{center}%
+ \let\footnote\thanks%
+   \hbox{ }
+   \vspace{10mm}%
+   {\LARGE \@thesis \par}%
+   \vspace{50mm}%
+   {\Huge \@title \par}%title font large=12pt
+   \vspace{50mm}%
+   {\LARGE \@department \par}%
+   \vspace{1mm}%
+   {\LARGE 学籍番号　\@id \par}%
+   \vspace{1mm}%
+   {\LARGE \@author \par}%
+   \vspace{20mm}%
+   {\LARGE 指導教員　\@sensei \par}%
+ \end{center}%
+ \vskip\Cvs%
+ }
+\makeatother 
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% New Commands %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%
+% Vector
+\def\bvec#1{\hbox{\boldmath $#1$}}%Bold style vector
+% degree, arcmin, arcsec
+\def\degr{\hbox{$^\circ$}}
+\def\arcmin{\hbox{$^\prime$}}
+\def\arcsec{\hbox{$^{\prime\prime}$}}
+% thermal degree
+\def\degc{\hbox{$^\circ$C}}
+\def\degf{\hbox{$^\circ$F}}
+% greece alphavet
+\def\alp{\hbox{$\alpha$}}
+\def\bet{\hbox{$\beta$}}
+\def\gam{\hbox{$\gamma$}}
+\def\x{\hbox{$\times$}}

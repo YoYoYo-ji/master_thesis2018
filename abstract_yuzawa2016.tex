@@ -1,0 +1,124 @@
+%-------------------------------------------------------%
+\documentclass[10pt]{article}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{bm,latexsym,amsmath,amssymb,amsfonts,mathrsfs}
+\usepackage{wrapfig}
+\usepackage[dvipdfmx]{color}
+%-------------------------------------------------------%
+\usepackage{color}
+\input{colordvi.tex}
+%-------------------------------------------------------%
+\newcommand*{\D}{{\rm d}}
+%-------------------------------------------------------%
+\usepackage[top=20truemm,bottom=20truemm,left=20truemm,right=20truemm]{geometry}
+%\topmargin=0.0in
+%\headsep=0.0in
+%\headheight=0.0in
+%\oddsidemargin=-0.22in
+%\evensidemargin=-0.22in
+%\textwidth=6.5in
+%\textheight=9.0in
+%-------------------------------------------------------%
+\title{{\large {\bf 超新星残骸G350.1-0.3}}}
+\author{}
+\date{}
+%
+\pagestyle{empty}
+%
+\begin{document}
+\maketitle
+%
+\thispagestyle{empty}
+%
+\vspace{-15mm}
+\begin{flushright}
+{\bf 13CB044F~湯澤~洋治}
+\\
+{\bf 指導教員~~内山~泰伸}
+
+\end{flushright}
+
+
+\section{{\normalsize 目的}}
+　地球に降り注ぐ宇宙線のうち、$\sim10^{15}eV$までのエネルギーの宇宙線は銀河系内の超新星残骸で生成されると考えられている。宇宙線の加速機構としては超新星残骸の衝撃波面を粒子が往復することで粒子が光速近くまで加速されるフェルミ衝撃波統計加速が提唱されており、宇宙線電子がこの加速機構により加速されていることはX線衛星の「あすか」による観測で確認された。ただ、宇宙線陽子の加速過程については未だに未解明な部分が多い。しかし、近年の研究により分子雲と相互作用している超新星残骸において宇宙線陽子が加速されている可能性が示唆されている。そこで、このような天体をX線で観測することで宇宙線陽子の加速過程を解明することを目的としている。
+\section{{\normalsize 超新星残骸W44}}
+ \begin{wrapfigure}[17]{r}[0mm]{55mm}
+\begin{center}
+\includegraphics[scale=0.25]{./broad_W44flux.png}
+\caption{W44のフラックスイメージ}
+\label{fig:W44}
+ \end{center}
+\end{wrapfigure}
+
+~~W44は赤経18h56m00s、赤緯+01°22'00"に位置し、年齢は約20000歳、地球からの距離が約2.8kpcの複合型（電波のシェルと中心に集中したX線）の超新星残骸（Fig\ref{fig:W44}）である。
+近年の研究では、様々な電波望遠鏡により分子雲からの$^{12}{\rm CO}(J=2-1)$放射と分子雲と衝撃波の相互作用を示すOHのメーザーが観測されている（先行論文\cite{sato}）。この他、X線観測により再結合プラズマの存在が示されている（先行論文\cite{uchida}）。
+この超新星残骸はGeV領域のγ線でとても明るい天体の一つであり、$\pi^0$崩壊により輝いていると示唆されている（先行論文\cite{sato}）。
+分子雲と相互作用している超新星残骸での宇宙線陽子の加速過程を探るのに適している天体である。
+\begin{wrapfigure}[10]{r}[0mm]{55mm}
+\begin{center}
+\includegraphics[scale=0.20]{./snr2.eps}
+\caption{宇宙線陽子の加速機構（先行論文\cite{sato}）}
+\label{fig:snr}
+ \end{center}
+\end{wrapfigure}
+~~宇宙線陽子の加速過程とは、分子雲と相互作用している超新星残骸では衝撃波によって加速された陽子と低エネルギー陽子によりFig\ref{fig:snr}のような現象が起きていると考えられている。加速された高エネルギー宇宙線陽子は$\pi^0$崩壊を起こす。ここで、低エネルギー陽子が通過する際に電離された分子雲中の鉄は基底状態に戻るときに輝線を出す。一方、$\pi$中間子は光子に崩壊し、GeV領域のγ線となるため、中性鉄輝線が観測される領域ではGeV領域のγ線で明るくなっているはずである。中性鉄輝線(Fe-K$\alpha$:6.4keV)をChandraで空間的に分解しながら探すことで宇宙線陽子の加速について探っていく。\\
+\section{{\normalsize ChandraX線観測衛星}}
+~~ChandraX線観測衛星は1999年にNASAが打ち上げたX線観測衛星である。Chandraには以下の３つの観測機器が搭載されている。
+ \begin{itemize}
+ \item 10枚のCCDで構成されるACIS(Advanced CCD Imaging Spectrometer)
+ \item マイクロチャンネルプレートからなるHRC(High Resolution Camera)
+ \item 高エネルギー透過型回折格子HETGと低エネルギー透過型回折格子LETG
+\end{itemize}
+ACISには2$\times$2のCCDからなるACIS-Iと1$\times$6のCCDからなるACIS-Sがある。Chandraの特徴としては視野中心での空間分解能が約0.5秒角であることと、観測できるエネルギー範囲が~10keVまでであることである。
+今回、解析に用いたのはこれらのうち撮像と分光が可能なACISを用いて観測されたデータのみである。
+
+\section{{\normalsize 解析}}
+~~今回、解析にはNASAが提供するCIAO(version4.8)を使用した。鉄輝線がどこに集中しているのか知るためにはACISのチップごとの特性を考慮した鉄輝線が含まれるエネルギー帯(6.1$\sim$6.7keV)でのフラックスイメージ（単位時間・単位面積に到来する光子の量の画像）を作成する必要がある。そのためには非X線バックグラウンド(NXB)を考慮しなければならない。ACISは5.0keV以上のエネルギー帯では天体の信号に対するNXBの割合が大きくなるため、バックグラウンド領域を指定せずにスペクトルを作成し、5.0keV以上のスペクトルをフィッティングすることでNXBのカウントを求め、補正したデータを観測時間マップで割ることでフラックスイメージを作成した。このとき使用した観測データをTable\ref{tb:obs}、使用したスペクトル（Fig\ref{fig:nxb}）と作成したフラックスイメージ（Fig\ref{fig:Fe}）を以下に示した。
+
+\begin{figure}[h]
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\includegraphics[scale=0.25]{./1958ccdid9_nxb.png}
+\caption{obs\_id 1958のChip9(FI)のスペクトル}
+\label{fig:nxb}
+\end{center}
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{center}
+\makeatletter
+\def\@captype{table}
+\makeatother
+\begin{tabular}{cccc}
+\hline
+\verb#obs_id#  & 観測年月 &   観測時間[ks] &   観測装置\\
+1958   &    2000年10月31日 &   45.56 &   ACIS-S\\
+5548   &    2005年6月25日  &    52.31    & ACIS-S\\
+6312    &   2005年6月23日   &   39.58  &  ACIS-S\\
+11231  &   2009年8月11日   &    55.46 &  ACIS-I\\
+\hline
+\end{tabular}
+ \caption{使用した観測データ}
+\label{tb:obs}
+\end{center}
+\end{minipage}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+\includegraphics[scale=0.3]{./1958_Fe_fluximage.png}
+\caption{obs\_id 1958の鉄輝線のフラックスイメージ}
+\label{fig:Fe}
+ \end{center}
+\end{figure}
+
+
+\section{{\normalsize 今後に向けて}}
+~~今回、作成した鉄輝線のフラックスイメージに加えてγ線を観測しているフェルミガンマ宇宙望遠鏡、電波望遠鏡のデータを用いることでそれぞれのフラックスの大きいところのスペクトルを抽出し、そのスペクトルのフィッティングを行っていく。この他、超新星残骸Cassiopeia Aの熱的放射についても解析を行う予定である。
+
+\begin{thebibliography}{2}
+\bibitem{sato}  Tamotsu Sato,  2015, 東京大学博士論文
+\bibitem{uchida} Uchida, H., Koyama, K., Yamaguchi, H., et al.\  2012, \ pasj, 64, 141
+\end{thebibliography}
+
+\end{document}
+%-------------------------------------------------------%
